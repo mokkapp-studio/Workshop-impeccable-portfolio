@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-10T19:46:28Z",
+  "title": "Design System: Xavier Pascual Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "primary", "displayName": "Program Ink", "canonical": "#121316", "tonalRamp": ["oklch(15% 0.003 271.1)", "oklch(26% 0.006 271.1)", "oklch(37% 0.006 271.1)", "oklch(48% 0.006 271.1)", "oklch(59% 0.006 271.1)", "oklch(70% 0.006 271.1)", "oklch(82% 0.006 271.1)", "oklch(95% 0.003 271.1)"] },
+      "field-logistica": { "role": "secondary", "displayName": "Logistics Sky Blue", "canonical": "#3fa9f5", "tonalRamp": ["oklch(15% 0.073 244.1)", "oklch(26% 0.147 244.1)", "oklch(37% 0.147 244.1)", "oklch(48% 0.147 244.1)", "oklch(59% 0.147 244.1)", "oklch(70% 0.147 244.1)", "oklch(82% 0.147 244.1)", "oklch(95% 0.073 244.1)"] },
+      "field-clinica": { "role": "secondary", "displayName": "Clinic Green", "canonical": "#2bc48a", "tonalRamp": ["oklch(15% 0.075 161.9)", "oklch(26% 0.150 161.9)", "oklch(37% 0.150 161.9)", "oklch(48% 0.150 161.9)", "oklch(59% 0.150 161.9)", "oklch(70% 0.150 161.9)", "oklch(82% 0.150 161.9)", "oklch(95% 0.075 161.9)"] },
+      "field-sistema": { "role": "secondary", "displayName": "System Orange", "canonical": "#ff7a1a", "tonalRamp": ["oklch(15% 0.093 48.9)", "oklch(26% 0.187 48.9)", "oklch(37% 0.187 48.9)", "oklch(48% 0.187 48.9)", "oklch(59% 0.187 48.9)", "oklch(70% 0.187 48.9)", "oklch(82% 0.187 48.9)", "oklch(95% 0.093 48.9)"] },
+      "field-tesoreria": { "role": "secondary", "displayName": "Treasury Yellow", "canonical": "#ffd230", "tonalRamp": ["oklch(15% 0.084 91.9)", "oklch(26% 0.169 91.9)", "oklch(37% 0.169 91.9)", "oklch(48% 0.169 91.9)", "oklch(59% 0.169 91.9)", "oklch(70% 0.169 91.9)", "oklch(82% 0.169 91.9)", "oklch(95% 0.084 91.9)"] },
+      "paper": { "role": "neutral", "displayName": "Paper White", "canonical": "#ffffff", "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(37% 0 0)", "oklch(48% 0 0)", "oklch(59% 0 0)", "oklch(70% 0 0)", "oklch(82% 0 0)", "oklch(95% 0 0)"] },
+      "silver": { "role": "neutral", "displayName": "Aluminum Silver", "canonical": "#d9dcdf", "tonalRamp": ["oklch(15% 0.003 247.9)", "oklch(26% 0.005 247.9)", "oklch(37% 0.005 247.9)", "oklch(48% 0.005 247.9)", "oklch(59% 0.005 247.9)", "oklch(70% 0.005 247.9)", "oklch(82% 0.005 247.9)", "oklch(95% 0.003 247.9)"] },
+      "ink-2": { "role": "neutral", "displayName": "Secondary Ink", "canonical": "color-mix(in oklab, var(--ink) 78%, var(--field))", "note": "Live mix against the field in view. Resolves to #3e3e41 on paper, #1f3040 on logistics blue, #1e352d on clinic green, #3f291f on system orange, #3e3724 on treasury yellow, #37383c on silver, #c4c4c5 on the ink field (white ink).", "tonalRamp": ["oklch(15% 0.003 271.1)", "oklch(26% 0.006 271.1)", "oklch(37% 0.006 271.1)", "oklch(48% 0.006 271.1)", "oklch(59% 0.006 271.1)", "oklch(70% 0.006 271.1)", "oklch(82% 0.006 271.1)", "oklch(95% 0.003 271.1)"] },
+      "rule": { "role": "neutral", "displayName": "Hairline", "canonical": "color-mix(in oklab, var(--ink) 88%, var(--field))", "note": "Live mix against the field in view, used only for 1px row dividers. Resolves to #292a2d on paper and #dedfdf on the ink field.", "tonalRamp": ["oklch(15% 0.003 271.1)", "oklch(26% 0.006 271.1)", "oklch(37% 0.006 271.1)", "oklch(48% 0.006 271.1)", "oklch(59% 0.006 271.1)", "oklch(70% 0.006 271.1)", "oklch(82% 0.006 271.1)", "oklch(95% 0.003 271.1)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Case titles, contact headline, next-case title. Extended heavy; sized from its column inside plates (min(10.4cqi, 5.4rem))." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles on home and in case bodies." },
+      "title": { "displayName": "Title", "purpose": "Area rows and decision titles." },
+      "lead": { "displayName": "Lead", "purpose": "Case summaries and section-opening paragraphs, 34-44ch." },
+      "body": { "displayName": "Body", "purpose": "Running prose, max 68ch." },
+      "data": { "displayName": "Data", "purpose": "Meta lists, table heads, index columns, footer. Condensed with tabular numerals." },
+      "note": { "displayName": "Note", "purpose": "Small secondary annotations in Secondary Ink." },
+      "action": { "displayName": "Action", "purpose": "Button and next-case action labels." },
+      "nav": { "displayName": "Nav", "purpose": "Top bar links." },
+      "wordmark": { "displayName": "Wordmark", "purpose": "The personal name in the top bar." }
+    },
+    "shadows": [
+      { "name": "inset-stroke", "value": "inset 0 0 0 2px var(--ink)", "purpose": "A border substitute, not elevation: outline button, button hover, role-matrix marks. The system has no drop shadows." }
+    ],
+    "focus": [
+      { "name": "focus-ring", "value": "outline: 3px solid var(--ink); outline-offset: 3px", "purpose": "Global :focus-visible treatment; follows the live ink, so it turns white on the ink field." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The program ease for every transition." },
+      { "name": "field-time", "value": "720ms", "purpose": "Page field and ink recolor as a zone crosses the reading line or a field preview is hovered." },
+      { "name": "button-state", "value": "260ms", "purpose": "Button fill, label and stroke swap." },
+      { "name": "legend-tint", "value": "300ms", "purpose": "Legend cell ink tint on hover/focus." },
+      { "name": "arrow-nudge", "value": "320ms (button) / 360ms (index, next case)", "purpose": "Trailing arrow translates right on hover; index rows also gain inline padding." },
+      { "name": "underline-draw", "value": "380ms", "purpose": "Top bar link underline draws in from the left." },
+      { "name": "reduced-motion", "value": "prefers-reduced-motion: reduce", "purpose": "Field recolor becomes instant and smooth scrolling is disabled." }
+    ],
+    "breakpoints": [
+      { "name": "phone-narrow", "value": "30rem" },
+      { "name": "phone", "value": "40rem" },
+      { "name": "stack", "value": "62rem" },
+      { "name": "shell-max", "value": "1680px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "An ink rectangle whose label is the current field knocked out; empties to an ink stroke on hover.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Ver el caso <svg viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M3 10.75h13.2l-4.6-4.6L13.4 4.4 21 12l-7.6 7.6-1.8-1.75 4.6-4.6H3z\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.95rem 1.3rem 0.95rem 1.4rem; background: var(--ink, #121316); color: var(--field, #3fa9f5); font-family: var(--font-archivo), Archivo, 'Helvetica Neue', Arial, sans-serif; font-stretch: 112%; font-weight: 720; font-size: 1rem; line-height: 1; text-decoration: none; border: 0; border-radius: 0; cursor: pointer; transition: background-color 260ms cubic-bezier(0.16, 1, 0.3, 1), color 260ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 260ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn svg { width: 1.1em; height: 1.1em; transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn:hover { background: transparent; color: var(--ink, #121316); box-shadow: inset 0 0 0 2px var(--ink, #121316); } .ds-btn:hover svg { transform: translateX(0.25em); } .ds-btn:focus-visible { outline: 3px solid var(--ink, #121316); outline-offset: 3px; } .ds-btn:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Transparent with a 2px inset ink stroke; fills with ink on hover. The second action beside a primary.",
+      "html": "<a class=\"ds-btn-linea\" href=\"#\">LinkedIn</a>",
+      "css": ".ds-btn-linea { display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.95rem 1.3rem 0.95rem 1.4rem; background: transparent; color: var(--ink, #121316); box-shadow: inset 0 0 0 2px var(--ink, #121316); font-family: var(--font-archivo), Archivo, 'Helvetica Neue', Arial, sans-serif; font-stretch: 112%; font-weight: 720; font-size: 1rem; line-height: 1; text-decoration: none; border: 0; border-radius: 0; cursor: pointer; transition: background-color 260ms cubic-bezier(0.16, 1, 0.3, 1), color 260ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-linea:hover { background: var(--ink, #121316); color: var(--field, #d9dcdf); } .ds-btn-linea:focus-visible { outline: 3px solid var(--ink, #121316); outline-offset: 3px; } .ds-btn-linea:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Top Bar",
+      "kind": "nav",
+      "refersTo": "top-bar",
+      "description": "Sticky bar painted with the live field, closed by a 2px ink rule; link underlines draw in on hover and stay for the current page.",
+      "html": "<header class=\"ds-cab\"><div class=\"ds-cab__in\"><p class=\"ds-cab__id\"><a class=\"ds-cab__marca\" href=\"#\">Xavier Pascual</a><span class=\"ds-cab__desc\">Diseño de producto para sistemas complejos</span></p><nav class=\"ds-cab__nav\" aria-label=\"Principal\"><a href=\"#\" aria-current=\"page\">Casos</a><a href=\"#\">Perfil</a><a href=\"#\">Contacto</a></nav></div></header>",
+      "css": ".ds-cab { background: var(--field, #3fa9f5); color: var(--ink, #121316); padding-inline: clamp(1rem, 3.2vw, 2.75rem); font-family: var(--font-archivo), Archivo, 'Helvetica Neue', Arial, sans-serif; } .ds-cab__in { height: 4.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; border-bottom: 2px solid var(--ink, #121316); } .ds-cab__id { margin: 0; display: flex; align-items: baseline; } .ds-cab__marca { color: inherit; font-size: 1.125rem; font-stretch: 125%; font-weight: 830; letter-spacing: -0.02em; text-decoration: none; white-space: nowrap; } .ds-cab__desc { margin-left: 1.1rem; font-size: 0.9rem; font-stretch: 85%; font-weight: 500; color: color-mix(in oklab, var(--ink, #121316) 78%, var(--field, #3fa9f5)); white-space: nowrap; } .ds-cab__nav { display: flex; gap: clamp(1rem, 2.5vw, 2.25rem); font-stretch: 88%; font-weight: 620; font-size: 0.975rem; } .ds-cab__nav a { color: inherit; text-decoration: none; padding-block: 0.4rem; background: linear-gradient(var(--ink, #121316), var(--ink, #121316)) 0 100% / 0 2px no-repeat; transition: background-size 380ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-cab__nav a:hover, .ds-cab__nav a[aria-current='page'] { background-size: 100% 2px; } .ds-cab__nav a:focus-visible { outline: 3px solid var(--ink, #121316); outline-offset: 3px; }"
+    },
+    {
+      "name": "Case Legend",
+      "kind": "custom",
+      "refersTo": "legend-item",
+      "description": "Four ruled cells of pictogram plus case name; hover tints the cell and previews that case's field on the page.",
+      "html": "<ul class=\"ds-leyenda\"><li><a href=\"#\"><svg viewBox=\"4 4 40 40\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M4 10h26v22H4z\"/><path d=\"M32 16h6l6 6v10H32z\"/><circle cx=\"12\" cy=\"38.5\" r=\"4.5\"/><circle cx=\"37\" cy=\"38.5\" r=\"4.5\"/></svg><span>Consola de operaciones logísticas<small>Logística B2B</small></span></a></li><li><a href=\"#\"><svg viewBox=\"4 4 40 40\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M18 5h12v13h13v12H30v13H18V30H5V18h13z\"/></svg><span>Agenda quirúrgica hospitalaria<small>Salud</small></span></a></li></ul>",
+      "css": ".ds-leyenda { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 2px solid var(--ink, #121316); margin: 0; padding: 0; list-style: none; background: var(--field, #3fa9f5); color: var(--ink, #121316); font-family: var(--font-archivo), Archivo, 'Helvetica Neue', Arial, sans-serif; } .ds-leyenda li + li { border-left: 2px solid var(--ink, #121316); } .ds-leyenda a { display: grid; grid-template-columns: 2.25rem 1fr; align-items: center; gap: 0.9rem; padding: 1rem clamp(0.75rem, 1.4vw, 1.25rem); color: inherit; text-decoration: none; font-stretch: 92%; font-weight: 640; font-size: 0.975rem; line-height: 1.2; transition: background-color 300ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-leyenda svg { display: block; width: 2.25rem; } .ds-leyenda a:hover, .ds-leyenda a:focus-visible { background: color-mix(in oklab, var(--ink, #121316) 9%, transparent); } .ds-leyenda a:focus-visible { outline: 3px solid var(--ink, #121316); outline-offset: 3px; } .ds-leyenda small { display: block; font-weight: 500; font-size: 0.8125rem; color: color-mix(in oklab, var(--ink, #121316) 78%, var(--field, #3fa9f5)); }"
+    },
+    {
+      "name": "Case Index Row",
+      "kind": "custom",
+      "refersTo": "case-index-row",
+      "description": "A 2px-ruled row of pictogram, title, condensed data and arrow; hover opens inline padding and nudges the arrow.",
+      "html": "<ul class=\"ds-indice\"><li><a href=\"#\"><svg class=\"ds-indice__picto\" viewBox=\"4 4 40 40\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M5 10h27V4l10 10-10 10v-6H5z\"/><path d=\"M43 30H16v-6L6 34l10 10v-6h27z\"/></svg><span class=\"ds-indice__titulo\">Conciliación bancaria para pymes</span><span class=\"ds-indice__dato\">Fintech</span><span class=\"ds-indice__dato\">2023</span><svg class=\"ds-indice__flecha\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M3 10.75h13.2l-4.6-4.6L13.4 4.4 21 12l-7.6 7.6-1.8-1.75 4.6-4.6H3z\"/></svg></a></li></ul>",
+      "css": ".ds-indice { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink, #121316); background: var(--field, #ffffff); color: var(--ink, #121316); font-family: var(--font-archivo), Archivo, 'Helvetica Neue', Arial, sans-serif; } .ds-indice a { display: grid; grid-template-columns: 3rem minmax(0, 1fr) 11rem 4rem 2rem; align-items: center; column-gap: 1.25rem; padding-block: 1.15rem; border-bottom: 2px solid var(--ink, #121316); color: inherit; text-decoration: none; transition: padding 360ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-indice__picto { width: 2.6rem; display: block; } .ds-indice__titulo { font-size: clamp(1.2rem, 1rem + 0.8vw, 1.75rem); font-stretch: 115%; font-weight: 740; line-height: 1.1; letter-spacing: -0.02em; } .ds-indice__dato { font-size: 0.875rem; font-stretch: 75%; font-weight: 560; letter-spacing: 0.01em; font-variant-numeric: tabular-nums; } .ds-indice__flecha { width: 1.5rem; display: block; transition: transform 360ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-indice a:hover, .ds-indice a:focus-visible { padding-inline: 0.75rem; } .ds-indice a:hover .ds-indice__flecha, .ds-indice a:focus-visible .ds-indice__flecha { transform: translateX(0.3rem); } .ds-indice a:focus-visible { outline: 3px solid var(--ink, #121316); outline-offset: 3px; }"
+    },
+    {
+      "name": "Meta List",
+      "kind": "custom",
+      "refersTo": "meta-list",
+      "description": "Condensed tabular facts under a 2px ink rule; labels in Secondary Ink.",
+      "html": "<dl class=\"ds-meta\"><dt>Dominio</dt><dd>Logística B2B</dd><dt>Rol</dt><dd>Product designer principal</dd><dt>Año</dt><dd>2025</dd></dl>",
+      "css": ".ds-meta { display: grid; grid-template-columns: auto 1fr; column-gap: 1.25rem; row-gap: 0.35rem; margin: 0; padding-top: 0.9rem; border-top: 2px solid var(--ink, #121316); background: var(--field, #3fa9f5); color: var(--ink, #121316); font-family: var(--font-archivo), Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.875rem; font-stretch: 75%; font-weight: 560; line-height: 1.3; letter-spacing: 0.01em; font-variant-numeric: tabular-nums; } .ds-meta dt { color: color-mix(in oklab, var(--ink, #121316) 78%, var(--field, #3fa9f5)); } .ds-meta dd { margin: 0; }"
+    },
+    {
+      "name": "Specimen Frame",
+      "kind": "card",
+      "refersTo": "specimen-frame",
+      "description": "Flat white screen in a square 2px ink frame under an ink title bar; holds coded product specimens (their own font and tokens).",
+      "html": "<figure class=\"ds-obra\"><div class=\"ds-obra__pantalla\"><div class=\"ds-obra__barra\"><span>Tráfico · Consola de operaciones</span><span class=\"ds-obra__sub\">Caso de ejemplo · contenido ficticio</span></div><div class=\"ds-obra__contenido\" role=\"img\" aria-label=\"Consola de operaciones\">Product specimen</div></div></figure>",
+      "css": ".ds-obra { margin: 0; } .ds-obra__pantalla { background: #ffffff; border: 2px solid var(--ink, #121316); border-radius: 0; overflow: hidden; } .ds-obra__barra { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.55rem 0.9rem; background: var(--ink, #121316); color: #ffffff; font-family: var(--font-archivo), Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.78rem; font-stretch: 82%; font-weight: 620; letter-spacing: 0.01em; white-space: nowrap; } .ds-obra__sub { color: color-mix(in oklab, #ffffff 72%, var(--ink, #121316)); overflow: hidden; text-overflow: ellipsis; } .ds-obra__contenido { min-height: 10rem; display: grid; place-items: center; color: #5a6270; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.85rem; }"
+    },
+    {
+      "name": "Case Pictogram",
+      "kind": "custom",
+      "refersTo": "pictogram",
+      "description": "The program's signature: a solid currentColor mark on a 48-unit grid, only 0/45/90 degree edges and whole circles.",
+      "html": "<div class=\"ds-picto\"><svg viewBox=\"4 4 40 40\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M4 10h26v22H4z\"/><path d=\"M32 16h6l6 6v10H32z\"/><circle cx=\"12\" cy=\"38.5\" r=\"4.5\"/><circle cx=\"37\" cy=\"38.5\" r=\"4.5\"/></svg><svg viewBox=\"4 4 40 40\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M18 5h12v13h13v12H30v13H18V30H5V18h13z\"/></svg><svg viewBox=\"4 4 40 40\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M5 5h17v17H5z\"/><path d=\"M26 5h17v17H26z\"/><path d=\"M5 26h17v17H5z\"/><path d=\"M34.5 25.5 43 34l-8.5 8.5L26 34z\"/></svg><svg viewBox=\"4 4 40 40\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M5 10h27V4l10 10-10 10v-6H5z\"/><path d=\"M43 30H16v-6L6 34l10 10v-6h27z\"/></svg></div>",
+      "css": ".ds-picto { display: flex; gap: 1.5rem; padding: 1.5rem; background: var(--field, #ffd230); color: var(--ink, #121316); } .ds-picto svg { display: block; width: 6rem; height: auto; }"
+    },
+    {
+      "name": "Role Matrix Marks",
+      "kind": "chip",
+      "refersTo": "matrix-mark-responsible",
+      "description": "Responsable: square filled with the case's field in an ink stroke. Participa: empty square. No participa: small Secondary Ink dot.",
+      "html": "<ul class=\"ds-marcas\"><li><span class=\"ds-marca ds-marca--2\"></span> Responsable</li><li><span class=\"ds-marca ds-marca--1\"></span> Participa</li><li><span class=\"ds-marca ds-marca--0\"></span> No participa</li></ul>",
+      "css": ".ds-marcas { display: flex; flex-wrap: wrap; gap: 0.6rem 1.75rem; list-style: none; margin: 0; padding: 1rem; background: #ffffff; color: color-mix(in oklab, var(--ink, #121316) 78%, #ffffff); font-family: var(--font-archivo), Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.875rem; font-stretch: 75%; font-weight: 560; } .ds-marcas li { display: flex; align-items: center; gap: 0.55rem; } .ds-marca { display: inline-block; width: 1.15rem; height: 1.15rem; box-sizing: border-box; } .ds-marca--2 { background: var(--caso, #3fa9f5); box-shadow: inset 0 0 0 2px var(--ink, #121316); } .ds-marca--1 { box-shadow: inset 0 0 0 2px var(--ink, #121316); } .ds-marca--0 { width: 0.4rem; height: 0.4rem; margin-inline: 0.375rem; background: color-mix(in oklab, var(--ink, #121316) 78%, #ffffff); border-radius: 50%; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Identity Program",
+    "overview": "The portfolio is built like a civic identity program in the line of Otl Aicher's Munich '72 and Trias's Barcelona '92. Order is the argument: a site that claims to make dense B2B systems legible has to show that discipline itself. Each case study owns one flat, saturated field and one solid geometric pictogram. The page ground takes on the field of the case in view, and ink, one type family and a strict 12-column grid hold everything else steady.\n\nThe world is flat and rectilinear. Color arrives only as whole fields, never as decoration, and structure is drawn in 2px ink rules. Everything else is typography: Archivo is used as a numbered width × weight family, the way Univers was, with extended heavy cuts for display, normal width for reading and condensed tabular cuts for data. Coded product specimens stand in for the work. They sit in square, ink-titled white frames and use their own UI font and tokens, so they read as another company's product placed inside the program.\n\nThe direction explicitly rejects the category default for designer portfolios: a friendly intro hero followed by a grid of rounded mockup cards on pastel.",
+    "keyCharacteristics": [
+      "One saturated field per case; the whole page recolors to the case in view.",
+      "Solid pictograms on a 48-unit grid, using only 0/45/90° edges and whole circles.",
+      "A single family (Archivo) whose role is set by width and weight, not by switching typefaces.",
+      "Square corners, no drop shadows, no color gradients.",
+      "2px ink rules for structure, 1px mixed-ink hairlines inside rows.",
+      "Specimens of the work framed as flat white screens under an ink title bar."
+    ],
+    "rules": [
+      { "name": "The Field Is The Color Rule", "body": "Saturated color appears only as a full-bleed field. Field colors never appear as text, borders, icons or small accents on another ground. There are two sanctioned exceptions. A primary button's label is the current field knocked out of an ink block. Inside a case body, the \"Responsable\" mark in the role matrix is filled with that case's own field and outlined in ink.", "section": "colors" },
+      { "name": "The Ink On Every Field Rule", "body": "Text on a saturated or light field is always ink (at least 7.1:1 on every field) or Secondary Ink (at least 5.2:1). White text appears only on the ink field.", "section": "colors" },
+      { "name": "The One Family Rule", "body": "Portfolio chrome is set only in Archivo. Hierarchy comes from width and weight together: wide and heavy for display, normal for reading, narrow for data. The system UI font belongs to the specimens alone.", "section": "typography" },
+      { "name": "The Tabular Data Rule", "body": "Numbers in data (years, counts, before/after metrics) always use tabular numerals, and data labels use the condensed width.", "section": "typography" },
+      { "name": "The Margin Line Rule", "body": "Section rules start and end on the gutter line, like the top bar's rule. They never run edge to edge.", "section": "layout" },
+      { "name": "The Flat Program Rule", "body": "Surfaces never lift. Emphasis comes from ink mass, field color and type width, never from shadow. The specimens' internal shadows are part of the depicted product and do not count.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do give every new case study exactly one field and one pictogram, drawn on the 48-unit grid with only 0/45/90° edges and whole circles, filled with `currentColor`.",
+      "Do declare every full-width zone's field so the page recolors to it. Use ink-on-white swapping only for the ink field.",
+      "Do set all chrome in Archivo and pick width together with weight by role: wdth 125/820 for display, normal for reading, wdth 75 with tabular numerals for data.",
+      "Do draw structure with 2px ink rules on the gutter line, and use 1px Hairline rules only between rows inside a block.",
+      "Do put titles in columns 1–4 and content in columns 5–12 for new sections.",
+      "Do show work as coded specimens in the white, ink-titled, square frame, bleeding off the viewport edge where the grid allows.",
+      "Do keep all motion on the program ease (`cubic-bezier(0.16, 1, 0.3, 1)`) at 260–380ms for state changes and 720ms for the field."
+    ],
+    "donts": [
+      "Don't round corners on portfolio chrome. Radius exists only inside the specimens and as whole circles.",
+      "Don't use drop shadows, blur or color gradients. The inset 2px ink stroke is a border, and the single-color gradient behind the nav underline is only an animatable bar.",
+      "Don't use field colors as text, borders, icons or accents on another ground. The knocked-out button label and the Responsable matrix mark are the only exceptions.",
+      "Don't put white text on a saturated field; ink carries every field except the ink field itself.",
+      "Don't bring a second typeface, or the specimens' `--u-*` tokens, into portfolio chrome.",
+      "Don't build the category default this world rejects: a friendly intro hero, then a grid of rounded mockup cards on pastel."
+    ]
+  }
+}

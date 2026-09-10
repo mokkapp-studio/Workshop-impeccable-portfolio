@@ -1,69 +1,210 @@
-import Image from "next/image";
+import Link from "next/link";
+import { CampoInicial } from "./_components/Campo";
+import { Pantalla } from "./_components/Pantalla";
+import { Flecha, Pictograma } from "./_components/Pictograma";
+import { obras } from "./_components/obras";
+import { casos, getCaso } from "./_data/casos";
+
+const campo = (color: string) => ({ "--seccion": color }) as React.CSSProperties;
+
+// EJEMPLO: descripciones de ejemplo; los casos enlazados son los ficticios.
+const areas = [
+  {
+    titulo: "Flujos densos",
+    texto: "Operaciones, agendas y bandejas de trabajo donde cada minuto y cada clic cuentan.",
+    casos: ["consola-logistica", "agenda-quirurgica"],
+  },
+  {
+    titulo: "Herramientas B2B",
+    texto: "Productos para equipos profesionales, con permisos, roles y datos que no caben en una pantalla.",
+    casos: ["conciliacion-pymes", "consola-logistica"],
+  },
+  {
+    titulo: "Sistemas de diseño a escala",
+    texto: "Tokens, componentes y temas que permiten a varios equipos y marcas construir con coherencia.",
+    casos: ["sistema-multimarca"],
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main>
+      <CampoInicial color={casos[0].campo} />
+      <h1 className="sr-only">Xavier Pascual, diseño de producto para sistemas complejos</h1>
+
+      <div id="casos">
+        {casos.map((caso, i) => {
+          const obra = obras[caso.slug];
+          return (
+            <section
+              key={caso.slug}
+              id={caso.slug}
+              className={`zona placa shell${i % 2 ? " placa--par" : ""}`}
+              data-campo={caso.campo}
+              style={campo(caso.campo)}
+              aria-labelledby={`t-${caso.slug}`}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              <div className="grid12 placa__cuerpo">
+                <div className="placa__info">
+                  <Pictograma id={caso.pictograma} className="placa__picto" />
+                  <h2 id={`t-${caso.slug}`} className="t-display">
+                    {caso.titulo}
+                  </h2>
+                  <p className="t-lead placa__resumen">{caso.resumen}</p>
+                  <dl className="meta t-data">
+                    <dt>Dominio</dt>
+                    <dd>{caso.dominio}</dd>
+                    <dt>Rol</dt>
+                    <dd>{caso.rol}</dd>
+                    <dt>Año</dt>
+                    <dd>{caso.anio}</dd>
+                  </dl>
+                  <p className="aviso-ficticio">Caso de ejemplo: contenido ficticio.</p>
+                  <div className="placa__accion">
+                    <Link className="btn" href={`/casos/${caso.slug}`}>
+                      Ver el caso <Flecha />
+                    </Link>
+                  </div>
+                </div>
+                <div className="placa__obra">
+                  <Pantalla producto={obra.producto} descripcion={obra.descripcion}>
+                    <obra.Hero />
+                  </Pantalla>
+                </div>
+              </div>
+              {i === 0 && (
+                <nav aria-label="Leyenda de casos">
+                  <ul className="leyenda">
+                    {casos.map((c) => (
+                      <li key={c.slug}>
+                        <a href={`#${c.slug}`} data-campo-previa={c.campo}>
+                          <Pictograma id={c.pictograma} />
+                          <span>
+                            {c.titulo}
+                            <small>{c.dominio}</small>
+                          </span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              )}
+            </section>
+          );
+        })}
+      </div>
+
+      <section
+        id="indice"
+        className="zona shell indice"
+        data-campo="var(--paper)"
+        style={campo("var(--paper)")}
+        aria-labelledby="t-indice"
+      >
+        <div className="grid12">
+          <h2 id="t-indice" className="t-h2 indice__t">
+            Índice de casos
+          </h2>
+          <ul className="indice__lista">
+            <li className="indice__cab t-data" aria-hidden>
+              <span />
+              <span>Caso</span>
+              <span>Dominio</span>
+              <span>Año</span>
+              <span />
+            </li>
+            {casos.map((c) => (
+              <li key={c.slug}>
+                <Link href={`/casos/${c.slug}`} data-campo-previa={c.campo}>
+                  <Pictograma id={c.pictograma} className="indice__picto" />
+                  <span className="indice__titulo">{c.titulo}</span>
+                  <span className="indice__dato t-data">{c.dominio}</span>
+                  <span className="indice__dato t-data">{c.anio}</span>
+                  <Flecha className="indice__flecha" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section
+        id="perfil"
+        className="zona shell perfil"
+        data-campo="var(--negro)"
+        data-tinta="var(--blanco)"
+        style={campo("var(--negro)")}
+        aria-labelledby="t-perfil"
+      >
+        <div className="grid12">
+          <h2 id="t-perfil" className="t-h2 perfil__t">
+            Diseño productos complejos para que se entiendan.
+          </h2>
+          <div className="perfil__c t-body">
+            <p className="t-lead">
+              Soy Xavier Pascual, product designer. Trabajo donde el producto es denso: muchos datos, muchos roles y
+              decisiones que cuestan dinero si se toman mal.
+            </p>
+            <p>
+              Mi trabajo empieza antes de las pantallas, entendiendo quién hace qué y qué necesita ver para decidir. Después
+              convierto ese mapa en interfaces que ordenan la información por lo que importa, no por cómo está guardada.
+            </p>
+            <p className="aviso-ficticio">Texto de ejemplo: sustituir por la biografía real.</p>
+          </div>
+          <ul className="areas">
+            {areas.map((a) => (
+              <li key={a.titulo} className="areas__fila">
+                <h3 className="t-h3">{a.titulo}</h3>
+                <p>{a.texto}</p>
+                <ul className="areas__casos" aria-label={`Casos de ${a.titulo.toLowerCase()}`}>
+                  {a.casos.map((slug) => {
+                    const c = getCaso(slug)!;
+                    return (
+                      <li key={slug}>
+                        <Link href={`/casos/${slug}`} data-campo-previa={c.campo}>
+                          <Pictograma id={c.pictograma} />
+                          <span>{c.titulo}</span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section
+        id="contacto"
+        className="zona shell contacto"
+        data-campo="var(--silver)"
+        style={campo("var(--silver)")}
+        aria-labelledby="t-contacto"
+      >
+        <div className="grid12">
+          <h2 id="t-contacto" className="t-display contacto__t">
+            ¿Un producto complejo que ordenar?
+          </h2>
+          <p className="t-lead contacto__lead">
+            Estoy abierto a puestos de diseño de producto y a proyectos con equipos que construyen herramientas
+            complejas. Escríbeme y te respondo en persona.
           </p>
+          <div className="contacto__acciones">
+            <a className="btn" href="mailto:hola@ejemplo.com">
+              hola@ejemplo.com <Flecha />
+            </a>
+            <a className="btn btn--linea" href="https://www.linkedin.com/" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+          </div>
+          <p className="aviso-ficticio contacto__aviso">Datos de contacto de ejemplo: pendientes de confirmar.</p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+        <footer className="pie t-data">
+          <span>© {new Date().getFullYear()} Xavier Pascual</span>
+          <span>Los casos publicados son ejemplos con contenido ficticio.</span>
+        </footer>
+      </section>
+    </main>
   );
 }

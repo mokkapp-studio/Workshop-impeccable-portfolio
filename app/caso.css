@@ -1,0 +1,662 @@
+/* ── Home: plates, index, profile, contact ── */
+
+/* Section rules sit on the margin line, like the top bar's rule. */
+.placa + .placa::before,
+.siguiente::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--gutter);
+  right: var(--gutter);
+  height: 2px;
+  background: var(--ink);
+}
+
+.cab__desc {
+  margin-left: 1.1rem;
+  font-size: 0.9rem;
+  font-stretch: 85%;
+  font-weight: 500;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+@media (max-width: 62rem) {
+  .cab__desc {
+    display: none;
+  }
+}
+
+.btn--linea {
+  background: transparent;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 2px var(--ink);
+}
+
+.btn--linea:hover {
+  background: var(--ink);
+  color: var(--field);
+}
+
+.indice {
+  padding-block: clamp(4.5rem, 11vw, 9rem) clamp(3rem, 7vw, 5rem);
+}
+
+.indice__t {
+  grid-column: 1 / span 4;
+  align-self: start;
+}
+
+.indice__lista {
+  grid-column: 5 / -1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.indice__lista a,
+.indice__cab {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr) 11rem 4rem 2rem;
+  align-items: center;
+  column-gap: 1.25rem;
+}
+
+.indice__cab {
+  color: var(--ink-2);
+  padding-bottom: 0.7rem;
+  border-bottom: 2px solid var(--ink);
+}
+
+.indice__lista a {
+  padding-block: 1.15rem;
+  border-bottom: 2px solid var(--ink);
+  text-decoration: none;
+  transition: padding 360ms var(--ease-out);
+}
+
+.indice__picto {
+  width: 2.6rem;
+}
+
+.indice__titulo {
+  font-size: clamp(1.2rem, 1rem + 0.8vw, 1.75rem);
+  font-stretch: 115%;
+  font-weight: 740;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.indice__flecha {
+  width: 1.5rem;
+  transition: transform 360ms var(--ease-out);
+}
+
+.indice__lista a:hover,
+.indice__lista a:focus-visible {
+  padding-inline: 0.75rem;
+}
+
+.indice__lista a:hover .indice__flecha,
+.indice__lista a:focus-visible .indice__flecha {
+  transform: translateX(0.3rem);
+}
+
+@media (max-width: 62rem) {
+  .indice__t,
+  .indice__lista {
+    grid-column: 1 / -1;
+  }
+  .indice__t {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 40rem) {
+  .indice__lista a,
+  .indice__cab {
+    grid-template-columns: 2.4rem minmax(0, 1fr) 1.5rem;
+  }
+  .indice__dato,
+  .indice__cab span:nth-child(3),
+  .indice__cab span:nth-child(4) {
+    display: none;
+  }
+  .indice__picto {
+    width: 2.1rem;
+  }
+  .indice__cab {
+    display: none;
+  }
+}
+
+.perfil {
+  padding-block: clamp(4rem, 9vw, 7rem) clamp(5rem, 11vw, 9rem);
+}
+
+.perfil > .grid12 {
+  border-top: 2px solid var(--ink);
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+  row-gap: 2rem;
+}
+
+.perfil__t {
+  grid-column: 1 / span 5;
+}
+
+.perfil__c {
+  grid-column: 7 / -1;
+}
+
+.perfil__c .t-lead {
+  margin-bottom: 1.2em;
+}
+
+/* Each area as a ruled row that points at the cases proving it. */
+.areas {
+  grid-column: 1 / -1;
+  list-style: none;
+  margin: clamp(2rem, 5vw, 4rem) 0 0;
+  padding: 0;
+  border-top: 2px solid var(--ink);
+}
+
+.areas__fila {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--col-gap);
+  row-gap: 0.75rem;
+  padding-block: 1.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.areas__fila:last-child {
+  border-bottom: 0;
+}
+
+.areas__fila h3 {
+  grid-column: 1 / span 4;
+}
+
+.areas__fila p {
+  grid-column: 5 / span 4;
+  margin: 0;
+  color: var(--ink-2);
+}
+
+.areas__casos {
+  grid-column: 9 / -1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.areas__casos a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  font-stretch: 92%;
+  font-weight: 620;
+  line-height: 1.2;
+}
+
+.areas__casos svg {
+  width: 1.5rem;
+  flex: none;
+}
+
+.areas__casos a:hover span,
+.areas__casos a:focus-visible span {
+  text-decoration: underline;
+}
+
+@media (max-width: 62rem) {
+  .perfil__t,
+  .perfil__c,
+  .areas__fila h3,
+  .areas__fila p,
+  .areas__casos {
+    grid-column: 1 / -1;
+  }
+}
+
+.contacto {
+  padding-block: clamp(5rem, 12vw, 10rem) 0;
+}
+
+.contacto__t {
+  grid-column: 1 / span 9;
+}
+
+.contacto__lead {
+  grid-column: 1 / span 6;
+  margin-top: 1.8rem;
+  max-width: 44ch;
+}
+
+.contacto__acciones {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.contacto__aviso {
+  grid-column: 1 / -1;
+  margin-top: 1.25rem;
+}
+
+.pie {
+  margin-top: clamp(4rem, 10vw, 7rem);
+  padding-block: 1.25rem 2rem;
+  border-top: 2px solid var(--ink);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+}
+
+@media (max-width: 62rem) {
+  .contacto__t,
+  .contacto__lead {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ── Case template ── */
+
+.caso-cab {
+  padding-block: clamp(2.5rem, 6vw, 4.5rem) 0;
+}
+
+.caso-cab__rej {
+  row-gap: 2.5rem;
+  align-items: end;
+}
+
+.caso-cab__titulo {
+  grid-column: 1 / span 8;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.caso-cab__lead {
+  max-width: 40ch;
+}
+
+.caso-cab__lado {
+  grid-column: 9 / -1;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+/* The pictogram at poster scale: the program's signature device. */
+.caso-cab__picto {
+  width: clamp(7rem, 14vw, 13.5rem);
+  height: auto;
+}
+
+.caso-cab__aviso {
+  margin-top: 2rem;
+}
+
+.caso-cab__obra {
+  margin-top: 1.25rem;
+}
+
+.caso-cab__obra .obra__pantalla {
+  border-bottom: 0;
+}
+
+@media (min-width: 62.001rem) {
+  .caso-cab__obra .ui {
+    font-size: max(7.5px, calc(100cqi / 72));
+  }
+}
+
+/* Narrow: pictogram, title, the work, then the facts. */
+@media (max-width: 62rem) {
+  .caso-cab {
+    display: flex;
+    flex-direction: column;
+    gap: 1.35rem;
+  }
+  .caso-cab__rej,
+  .caso-cab__lado,
+  .caso-cab__titulo {
+    display: contents;
+  }
+  .caso-cab__picto {
+    order: 1;
+    width: 4.5rem;
+  }
+  .caso-cab__titulo h1 {
+    order: 2;
+  }
+  .caso-cab__obra {
+    order: 3;
+    margin-top: 0;
+    margin-right: calc(-1 * var(--gutter));
+  }
+  .caso-cab__aviso {
+    order: 4;
+    margin-top: 0;
+  }
+  .caso-cab__lead {
+    order: 5;
+  }
+  .caso-cab__obra .obra__pantalla {
+    border-bottom: 2px solid var(--ink);
+  }
+  .caso-cab__meta {
+    order: 6;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.caso-cuerpo {
+  padding-block: clamp(4rem, 9vw, 7rem) clamp(3rem, 7vw, 5rem);
+}
+
+.caso-sec {
+  padding-block: clamp(3rem, 7vw, 5.5rem);
+  border-top: 2px solid var(--ink);
+  row-gap: 1.5rem;
+}
+
+.caso-sec:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.caso-sec__t {
+  grid-column: 1 / span 4;
+  align-self: start;
+}
+
+.caso-sec__c {
+  grid-column: 5 / span 7;
+}
+
+.caso-sec__ancho {
+  grid-column: 5 / -1;
+}
+
+@media (max-width: 62rem) {
+  .caso-sec__t,
+  .caso-sec__c,
+  .caso-sec__ancho {
+    grid-column: 1 / -1;
+  }
+}
+
+.inventario {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.inventario th {
+  text-align: left;
+  font-weight: 450;
+  padding: 0.8rem 1.5rem 0.8rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.inventario td {
+  text-align: right;
+  font-weight: 700;
+  font-stretch: 110%;
+  white-space: nowrap;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.inventario tr:first-child > * {
+  border-top: 2px solid var(--ink);
+}
+
+.inventario tr:last-child > * {
+  border-bottom: 2px solid var(--ink);
+}
+
+/* Positioned so the table's visually-hidden labels stay inside the scroller. */
+.matriz__marco {
+  position: relative;
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.matriz {
+  width: 100%;
+  min-width: 36rem;
+  border-collapse: collapse;
+}
+
+.matriz th {
+  font-weight: 620;
+  font-stretch: 90%;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.matriz thead th {
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  vertical-align: bottom;
+  padding: 0 0.5rem 0.8rem;
+  border-bottom: 2px solid var(--ink);
+}
+
+.matriz tbody th {
+  padding: 0.85rem 1rem 0.85rem 0;
+  border-bottom: 1px solid var(--rule);
+  white-space: nowrap;
+}
+
+.matriz td {
+  padding: 0.85rem 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.marca {
+  display: inline-block;
+  width: 1.15rem;
+  height: 1.15rem;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.marca--2 {
+  background: var(--caso, var(--ink));
+  box-shadow: inset 0 0 0 2px var(--ink);
+}
+
+.marca--1 {
+  box-shadow: inset 0 0 0 2px var(--ink);
+}
+
+.marca--0 {
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-inline: 0.375rem;
+  background: var(--ink-2);
+  border-radius: 50%;
+}
+
+.matriz__leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.75rem;
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  color: var(--ink-2);
+}
+
+.matriz__leyenda li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.decision {
+  row-gap: 1.5rem;
+  padding-block: clamp(2rem, 4vw, 3rem);
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  border-top: 1px solid var(--rule);
+}
+
+.decision__txt {
+  grid-column: 1 / span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.decision__txt .t-body {
+  margin: 0;
+  color: var(--ink-2);
+}
+
+.decision__frags {
+  grid-column: 5 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--col-gap);
+}
+
+@media (max-width: 62rem) {
+  .decision__txt,
+  .decision__frags {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 40rem) {
+  .decision__frags {
+    grid-template-columns: 1fr;
+  }
+}
+
+.resultado {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: 1.5rem 1.25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.resultado thead th {
+  text-align: left;
+  font-weight: 560;
+  color: var(--ink-2);
+  padding: 0 1rem 0.7rem 0;
+  border-bottom: 2px solid var(--ink);
+}
+
+.resultado tbody th {
+  text-align: left;
+  font-weight: 500;
+  padding: 1.1rem 1.5rem 1.1rem 0;
+  border-bottom: 2px solid var(--ink);
+  width: 55%;
+}
+
+.resultado td {
+  padding: 1.1rem 1rem 1.1rem 0;
+  border-bottom: 2px solid var(--ink);
+  white-space: nowrap;
+}
+
+.resultado__antes {
+  color: var(--ink-2);
+  font-stretch: 90%;
+}
+
+.resultado__despues {
+  font-size: clamp(1.3rem, 1rem + 1vw, 2rem);
+  font-stretch: 125%;
+  font-weight: 820;
+  letter-spacing: -0.02em;
+}
+
+.aprendizaje {
+  margin: 0;
+  font-size: clamp(1.45rem, 1.05rem + 1.4vw, 2.4rem);
+  font-stretch: 112%;
+  font-weight: 640;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  max-width: 32ch;
+}
+
+.siguiente {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 72svh;
+  box-sizing: border-box;
+  text-decoration: none;
+  padding-block: clamp(4rem, 10vw, 8rem);
+}
+
+.siguiente__rej {
+  width: 100%;
+  align-items: start;
+}
+
+.siguiente__picto {
+  grid-column: 1 / span 2;
+  width: clamp(4rem, 8vw, 7.5rem);
+}
+
+.siguiente__txt {
+  grid-column: 3 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.siguiente__titulo {
+  display: block;
+}
+
+.siguiente__accion {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-stretch: 112%;
+  font-weight: 720;
+  font-size: 1.1rem;
+}
+
+.siguiente__accion svg {
+  width: 1.3em;
+  transition: transform 360ms var(--ease-out);
+}
+
+.siguiente:hover .siguiente__accion svg,
+.siguiente:focus-visible .siguiente__accion svg {
+  transform: translateX(0.35rem);
+}
+
+@media (max-width: 40rem) {
+  .siguiente__picto,
+  .siguiente__txt {
+    grid-column: 1 / -1;
+  }
+  .siguiente__rej {
+    row-gap: 1.5rem;
+  }
+}
